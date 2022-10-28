@@ -1,0 +1,426 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="LoginACME" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_AssetCredentialACME" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>934,2466</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>LoginACME_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="38">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Security</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="LoginACME" sap:VirtualizedContainerService.HintSize="845,2401" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="TitleExists" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Login into ACME Page" sap:VirtualizedContainerService.HintSize="803,79" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Login into ACME Portal&quot;]" />
+    <ui:OCRTextExists sap2010:Annotation.AnnotationText="This activity is in charge to detect if the main title of our portal is already there, that means that we are already logged" DisplayName="Validate if Dashboard title exists" sap:VirtualizedContainerService.HintSize="803,138" sap2010:WorkflowViewState.IdRef="OCRTextExists_1" Occurrence="1" Result="[TitleExists]" Text="Dashboard">
+      <ui:OCRTextExists.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+          <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR 1" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" />
+        </ActivityFunc>
+      </ui:OCRTextExists.OCREngine>
+      <ui:OCRTextExists.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="06b8e772-e981-43b7-b4ec-33cc39335c49" InformativeScreenshot="02236fd15cd70b3ceabdb9620fbe6e8d" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl tag='H1' /&gt;" TimeoutMS="10000" WaitForReady="COMPLETE" />
+      </ui:OCRTextExists.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:OCRTextExists>
+    <Switch x:TypeArguments="x:Boolean" sap2010:Annotation.AnnotationText="We are now looking if we are already logged or needs to login or if the portal is down, and send an error" DisplayName="Look if we are already logged or needs to login or if the portal is down" Expression="[TitleExists]" sap:VirtualizedContainerService.HintSize="803,2012" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage x:Key="True" DisplayName="Nothing to do, already logged..." sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Nothing to do, already logged...&quot;]" />
+      <Sequence x:Key="False" DisplayName="Log or Throw Error" sap:VirtualizedContainerService.HintSize="763,1775" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:Boolean" Name="LoginTitleExists" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:OCRTextExists sap2010:Annotation.AnnotationText="This activity validate if the login title exists " DisplayName="Login Title Exists" sap:VirtualizedContainerService.HintSize="721,252" sap2010:WorkflowViewState.IdRef="OCRTextExists_2" Occurrence="1" Result="[LoginTitleExists]" Text="Login">
+          <ui:OCRTextExists.OCREngine>
+            <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+              <ActivityFunc.Argument>
+                <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+              </ActivityFunc.Argument>
+              <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR 2" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_2" Image="[Image]" />
+            </ActivityFunc>
+          </ui:OCRTextExists.OCREngine>
+          <ui:OCRTextExists.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a9004a3f-9d36-4551-b3d6-707da34fee4b" InformativeScreenshot="621f4eff08302b5c699704f57be3fff7" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Log In' /&gt;&lt;webctrl tag='H1' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:OCRTextExists.Target>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:OCRTextExists>
+        <If Condition="[LoginTitleExists = True]" DisplayName="If login title exists" sap:VirtualizedContainerService.HintSize="721,1391" sap2010:WorkflowViewState.IdRef="If_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <Sequence DisplayName="Login into System1" sap:VirtualizedContainerService.HintSize="476,1233" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="ss:SecureString" Name="password" />
+                <Variable x:TypeArguments="x:String" Name="username" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_AssetCredentialACME]" CacheStrategy="None" DisplayName="Get ACME Credential" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[password]" Username="[username]" />
+              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="9b040496-58c0-40e8-a2dd-8ad02944878e" DisplayName="Login" sap:VirtualizedContainerService.HintSize="434,1022" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V5">
+                <p:CVScope.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Type Credentials" sap:VirtualizedContainerService.HintSize="478,1170" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" ScrollDirection="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="False" Descriptor="[&quot;Target: InputBox (175,366,487,38)&quot; +&#xA;&quot;Anchor: Text 'Email:' (174,346,42,13)&quot;]" DesignTimeCacheId="9b040496-58c0-40e8-a2dd-8ad02944878e" DesignTimeScaleFactor="1" DisplayName="Type Username" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,184" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_1" InformativeScreenshot="f8e7b28b2d826b39adc7d32a1f5ed7e5" NumberOfScrolls="2" Text="[username]" Version="V5">
+                        <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                          <uc:CvDescriptor Id="a83415f1-4606-4785-bd57-830b61ee9e1a">
+                            <uc:CvDescriptor.Anchors>
+                              <x:Array Type="uc:CvElementDescriptor">
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="174, 346, 42, 13" ElementType="Text" Text="Email:" />
+                              </x:Array>
+                            </uc:CvDescriptor.Anchors>
+                            <uc:CvDescriptor.Target>
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="175, 366, 487, 38" ElementType="InputBox" />
+                            </uc:CvDescriptor.Target>
+                          </uc:CvDescriptor>
+                        </p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                        <p:CvTypeIntoWithDescriptor.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="9315285e-7349-4477-81a3-ab8f7b2c0352">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </p:CvTypeIntoWithDescriptor.Target>
+                      </p:CvTypeIntoWithDescriptor>
+                      <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" ScrollDirection="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (174,441,487,36)&quot; +&#xA;&quot;Anchor: Text 'Password:' (173,420,72,13)&quot;]" DesignTimeCacheId="9b040496-58c0-40e8-a2dd-8ad02944878e" DesignTimeScaleFactor="1" DisplayName="Type Password" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,184" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_2" InformativeScreenshot="989bb1f1fe60fc32d619328c5541e7d0" NumberOfScrolls="2" Text="[password]" Version="V5">
+                        <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                          <uc:CvDescriptor Id="9bb80e2a-3fbc-4646-9981-d840cd9e5bfb">
+                            <uc:CvDescriptor.Anchors>
+                              <x:Array Type="uc:CvElementDescriptor">
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="173, 420, 72, 13" ElementType="Text" Text="Password:" />
+                              </x:Array>
+                            </uc:CvDescriptor.Anchors>
+                            <uc:CvDescriptor.Target>
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="174, 441, 487, 36" ElementType="InputBox" />
+                            </uc:CvDescriptor.Target>
+                          </uc:CvDescriptor>
+                        </p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                        <p:CvTypeIntoWithDescriptor.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7e59b0ab-e651-4b79-9ba3-5395f8e155ce">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </p:CvTypeIntoWithDescriptor.Target>
+                      </p:CvTypeIntoWithDescriptor>
+                      <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" ScrollDirection="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (173,530,63,36)&quot; +&#xA;&quot;Anchor: Text 'Forgot Password?' (253,544,145,13)&quot;]" DesignTimeCacheId="9b040496-58c0-40e8-a2dd-8ad02944878e" DesignTimeScaleFactor="1" DisplayName="Click Login" sap:VirtualizedContainerService.HintSize="400,184" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="67c5f0993ca5099adcbb2f2c300c53dd" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" Version="V5">
+                        <p:CvClickWithDescriptor.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </p:CvClickWithDescriptor.CursorPosition>
+                        <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                          <uc:CvDescriptor Id="dbbc0412-e63c-4e94-9fa8-1c8eb65b0685">
+                            <uc:CvDescriptor.Anchors>
+                              <x:Array Type="uc:CvElementDescriptor">
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="253, 544, 145, 13" ElementType="Text" Text="Forgot Password?" />
+                              </x:Array>
+                            </uc:CvDescriptor.Anchors>
+                            <uc:CvDescriptor.Target>
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="173, 530, 63, 36" ElementType="Button" />
+                            </uc:CvDescriptor.Target>
+                          </uc:CvDescriptor>
+                        </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                        <p:CvClickWithDescriptor.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="8b7aa57d-76b1-4d3e-ad47-fa46001f2b18">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </p:CvClickWithDescriptor.Target>
+                      </p:CvClickWithDescriptor>
+                      <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[TitleExists=False]" DisplayName="Wait until login in is correct" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+                        <ui:InterruptibleDoWhile.Body>
+                          <Sequence DisplayName="Wait until correct login" sap:VirtualizedContainerService.HintSize="376,370" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:OCRTextExists sap2010:Annotation.AnnotationText="This activity is in charge to detect if the main title of our portal is already there, that means that we are already logged" DisplayName="Validate correct login" sap:VirtualizedContainerService.HintSize="334,278" sap2010:WorkflowViewState.IdRef="OCRTextExists_4" Occurrence="1" Result="[TitleExists]" Text="Dashboard">
+                              <ui:OCRTextExists.OCREngine>
+                                <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                                  <ActivityFunc.Argument>
+                                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                                  </ActivityFunc.Argument>
+                                  <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR 4" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_5" Image="[Image]" />
+                                </ActivityFunc>
+                              </ui:OCRTextExists.OCREngine>
+                              <ui:OCRTextExists.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="06b8e772-e981-43b7-b4ec-33cc39335c49" InformativeScreenshot="02236fd15cd70b3ceabdb9620fbe6e8d" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl tag='H1' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+                              </ui:OCRTextExists.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:OCRTextExists>
+                          </Sequence>
+                        </ui:InterruptibleDoWhile.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InterruptibleDoWhile>
+                    </Sequence>
+                  </ActivityAction>
+                </p:CVScope.Body>
+                <p:CVScope.DesignTimeCache>
+                  <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                </p:CVScope.DesignTimeCache>
+                <p:CVScope.DesignTimeCacheContainer>
+                  <uc:CvCacheContainer>
+                    <uc:CvCacheContainer.Caches>
+                      <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+                        <uc:CVCache DataSent="False" DisplayName="Main Screen" Id="9b040496-58c0-40e8-a2dd-8ad02944878e" InformativeScreenshot="304cb9132d1fc836db33bf2375c801e3" LogicalPosition="0, 71" OcrText="OCNESEEDY SEED Gh&#xD;&#xA;Login&#xD;&#xA;Home / Login&#xD;&#xA;To continue, please authenticota born&#xD;&#xA;T ]&#xD;&#xA;Email: Aa&#xD;&#xA;[i i&#xD;&#xA;Password:&#xD;&#xA;0 Remember ie&#xD;&#xA;Forgot Your&#xD;&#xA;Password? Register&#xD;&#xA;‘Copyright © 2022 ACME Systems" Position="0, 71">
+                          <uc:CVCache.CvAnchorRelations>
+                            <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
+                          </uc:CVCache.CvAnchorRelations>
+                          <uc:CVCache.CvUiElements>
+                            <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
+                              <uc:CvElementInfo Category="InputBox" Region="284, 295, 390, 29" />
+                              <uc:CvElementInfo Category="Button" Region="283, 368, 50, 29" />
+                              <uc:CvElementInfo Category="InputBox" Region="287, 238, 385, 28" />
+                              <uc:CvElementInfo Category="Button" Region="475, 368, 65, 29" />
+                              <uc:CvElementInfo Category="CheckBox" Region="282, 337, 11, 12" />
+                              <uc:CvElementInfo Category="Icon" Region="649, 244, 16, 18" />
+                              <uc:CvElementInfo Category="Button" Region="336, 367, 136, 29" />
+                              <uc:CvElementInfo Category="InputBox" Region="413, 126, 720, 31" />
+                              <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="528, 200, 251, 42" />
+                              <uc:CvElementInfo Category="RadioButton" Confidence="Runtime" Region="273, 137, 9, 11" />
+                              <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="271, 136, 11, 14" />
+                              <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1106, 11, 39, 17" />
+                              <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="982, 13, 103, 15" />
+                              <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="273, 137, 10, 12" />
+                              <uc:CvElementInfo Category="InputBox" Region="982, 14, 105, 15" />
+                              <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="1106, 12, 39, 17" />
+                              <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="980, 11, 101, 18" />
+                              <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="1106, 11, 38, 17" />
+                            </scg:List>
+                          </uc:CVCache.CvUiElements>
+                          <uc:CVCache.OcrTexts>
+                            <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="32">
+                              <uc:OcrTextInfo Region="218, 5, 117, 30" Text="OCNESEEDY" />
+                              <uc:OcrTextInfo Region="979, 14, 108, 12" Text="SEED" />
+                              <uc:OcrTextInfo Region="1106, 14, 36, 14" Text="Gh" />
+                              <uc:OcrTextInfo Region="229, 76, 70, 27" Text="Login" />
+                              <uc:OcrTextInfo Region="240, 138, 32, 8" Text="Home" />
+                              <uc:OcrTextInfo Region="276, 138, 4, 8" Text="/" />
+                              <uc:OcrTextInfo Region="287, 138, 30, 10" Text="Login" />
+                              <uc:OcrTextInfo Region="283, 192, 20, 14" Text="To" />
+                              <uc:OcrTextInfo Region="309, 192, 81, 17" Text="continue," />
+                              <uc:OcrTextInfo Region="393, 192, 60, 18" Text="please" />
+                              <uc:OcrTextInfo Region="454, 192, 108, 14" Text="authenticota" />
+                              <uc:OcrTextInfo Region="565, 192, 36, 9" Text="born" />
+                              <uc:OcrTextInfo Region="523, 196, 15, 39" Text="T" />
+                              <uc:OcrTextInfo Region="774, 205, 6, 30" Text="]" />
+                              <uc:OcrTextInfo Region="284, 210, 30, 30" Text="Email:" />
+                              <uc:OcrTextInfo Region="634, 226, 24, 5" Text="Aa" />
+                              <uc:OcrTextInfo Region="283, 239, 12, 25" Text="[i" />
+                              <uc:OcrTextInfo Region="649, 239, 22, 25" Text="i" />
+                              <uc:OcrTextInfo Region="284, 281, 63, 8" Text="Password:" />
+                              <uc:OcrTextInfo Region="283, 339, 10, 10" Text="0" />
+                              <uc:OcrTextInfo Region="297, 341, 64, 8" Text="Remember" />
+                              <uc:OcrTextInfo Region="358, 341, 16, 8" Text="ie" />
+                              <uc:OcrTextInfo Region="346, 379, 120, 10" Text="Forgot" />
+                              <uc:OcrTextInfo Region="377, 367, 28, 30" Text="Your" />
+                              <uc:OcrTextInfo Region="404, 379, 63, 10" Text="Password?" />
+                              <uc:OcrTextInfo Region="487, 379, 48, 10" Text="Register" />
+                              <uc:OcrTextInfo Region="283, 474, 50, 10" Text="‘Copyright" />
+                              <uc:OcrTextInfo Region="334, 474, 8, 8" Text="©" />
+                              <uc:OcrTextInfo Region="346, 474, 24, 8" Text="2022" />
+                              <uc:OcrTextInfo Region="373, 474, 32, 8" Text="ACME" />
+                              <uc:OcrTextInfo Region="409, 474, 42, 10" Text="Systems" />
+                            </scg:List>
+                          </uc:CVCache.OcrTexts>
+                        </uc:CVCache>
+                      </scg:List>
+                    </uc:CvCacheContainer.Caches>
+                  </uc:CvCacheContainer>
+                </p:CVScope.DesignTimeCacheContainer>
+                <p:CVScope.OCREngine>
+                  <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                    <ActivityFunc.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                    </ActivityFunc.Argument>
+                    <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR 3" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_3" Image="[Image]" />
+                  </ActivityFunc>
+                </p:CVScope.OCREngine>
+                <p:CVScope.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fa5dbbda-4966-41be-9f6b-e440caa9b053" InformativeScreenshot="5aa80eb041154f154ad460afb514120a" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Log In' /&gt;&lt;webctrl tag='BODY' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </p:CVScope.Target>
+                <p:CVScope.UseLocalServer>
+                  <InArgument x:TypeArguments="x:Boolean" />
+                </p:CVScope.UseLocalServer>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </p:CVScope>
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Throw DisplayName="Send Portal Error" Exception="[New Exception(&quot;Portal_Error&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+          </If.Else>
+        </If>
+      </Sequence>
+    </Switch>
+  </Sequence>
+</Activity>
