@@ -1,13 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="System1GetDT" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="System1GetDT" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="This is the csv path that the bot need to create with the initial information from the ACME portal" Name="in_FileToProcess" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="Provide the WorkItems URL" Name="in_WorkitemsURL" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="This URL is provided in order to navigate through every datatable page in ACME system" Name="in_PageURL" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Provide the WorkItems URL example &quot;https://acme-test.uipath.com/work-items&quot;" Name="in_WorkitemsURL" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="This URL is provided in order to navigate through every datatable page in ACME system with the indicator NUMBER in alt, example: &quot;https://acme-test.uipath.com/work-items?page=NUMBER&quot;" Name="in_PageURL" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>829,848</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>934,1423</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System1GetDT_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="43">
@@ -57,7 +57,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="66">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -91,9 +91,14 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="System1GetDT" sap:VirtualizedContainerService.HintSize="400,783" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="System1GetDT" sap:VirtualizedContainerService.HintSize="564,1358" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="NumberOfPage" />
     </Sequence.Variables>
@@ -102,8 +107,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Getting work items" sap:VirtualizedContainerService.HintSize="358,103" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Getting work items&quot;]" />
-    <TryCatch DisplayName="Try To Delete File To Process" sap:VirtualizedContainerService.HintSize="358,62" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Getting work items" sap:VirtualizedContainerService.HintSize="522,79" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Getting work items&quot;]" />
+    <TryCatch DisplayName="Try To Delete File To Process" sap:VirtualizedContainerService.HintSize="522,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -135,7 +140,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open workitems page" BrowserType="Chrome" DisplayName="Open Work Items And Set the page" sap:VirtualizedContainerService.HintSize="358,93" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="6d6eb5e309514f039c320333b4781544" Selector="&lt;html app='chrome.exe' title='ACME System 1*' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open workitems page" BrowserType="Chrome" DisplayName="Open Work Items And Set the page" sap:VirtualizedContainerService.HintSize="522,82" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="6d6eb5e309514f039c320333b4781544" Selector="&lt;html app='chrome.exe' title='ACME System 1*' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -203,7 +208,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BrowserScope>
-    <Assign DisplayName="Set Number Of Pages" sap:VirtualizedContainerService.HintSize="358,70" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Set Number Of Pages" sap:VirtualizedContainerService.HintSize="522,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[NumberOfPage]</OutArgument>
       </Assign.To>
@@ -211,39 +216,37 @@
         <InArgument x:TypeArguments="x:Int32">1</InArgument>
       </Assign.Value>
     </Assign>
-    <DoWhile DisplayName="Loop Until Error Page" sap:VirtualizedContainerService.HintSize="358,62" sap2010:WorkflowViewState.IdRef="DoWhile_1">
+    <DoWhile DisplayName="Loop Until Error Page" sap:VirtualizedContainerService.HintSize="522,715" sap2010:WorkflowViewState.IdRef="DoWhile_1">
       <DoWhile.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="ContinueFlag" />
       </DoWhile.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <DoWhile.Condition>
-        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ContinueFlag = False" />
-      </DoWhile.Condition>
-      <Sequence DisplayName="Loop" sap:VirtualizedContainerService.HintSize="476,569" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <DoWhile.Condition>[ContinueFlag = False]</DoWhile.Condition>
+      <Sequence DisplayName="Loop" sap:VirtualizedContainerService.HintSize="476,553" sap2010:WorkflowViewState.IdRef="Sequence_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open New Page In Work Items" BrowserType="Chrome" DisplayName="Navigate To Each Page" sap:VirtualizedContainerService.HintSize="434,479" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="6d6eb5e309514f039c320333b4781544" Selector="&lt;html app='chrome.exe' title='ACME System 1*' /&gt;">
+        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open New Page In Work Items" BrowserType="Chrome" DisplayName="Navigate To Each Page" sap:VirtualizedContainerService.HintSize="434,461" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="6d6eb5e309514f039c320333b4781544" Selector="&lt;html app='chrome.exe' title='ACME System 1*' /&gt;">
           <ui:BrowserScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Navigate and extract in case necessary" sap:VirtualizedContainerService.HintSize="400,292" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence DisplayName="Navigate and extract in case necessary" sap:VirtualizedContainerService.HintSize="376,284" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Work Items" sap:VirtualizedContainerService.HintSize="358,69" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[in_PageURL.Replace(&quot;[NUMBER]&quot;,NumberOfPage.ToString)]">
+                <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Work Items" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[in_PageURL.Replace(&quot;NUMBER&quot;,NumberOfPage.ToString)]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -251,7 +254,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:NavigateTo>
-                <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" sap2010:Annotation.AnnotationText="Extract all the work items to process" CvMethod="ElementDetection, OCR" DesignTimeCacheId="016b136a-e925-4c16-85de-650352c47d4f" DisplayName="Extract All The Main Data To Process" sap:VirtualizedContainerService.HintSize="358,93" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V5">
+                <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" sap2010:Annotation.AnnotationText="Extract all the work items to process" CvMethod="ElementDetection, OCR" DesignTimeCacheId="016b136a-e925-4c16-85de-650352c47d4f" DisplayName="Extract All The Main Data To Process" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V5">
                   <p:CVScope.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
@@ -259,7 +262,7 @@
                       </ActivityAction.Argument>
                       <Sequence DisplayName="Navigate for Each Page" sap:VirtualizedContainerService.HintSize="478,1042" sap2010:WorkflowViewState.IdRef="Sequence_5">
                         <Sequence.Variables>
-                          <Variable x:TypeArguments="sd:DataTable" Name="dt_WorkItemsWI5" />
+                          <Variable x:TypeArguments="sd1:DataTable" Name="dt_WorkItemsWI5" />
                           <Variable x:TypeArguments="x:Boolean" Name="ErrorPageExists" />
                         </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
@@ -267,7 +270,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Navigating to next page" sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Navigating to page: &quot;+NumberOfPage.ToString]">
+                        <ui:LogMessage DisplayName="Navigating to next page" sap:VirtualizedContainerService.HintSize="400,79" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Navigating to page: &quot;+NumberOfPage.ToString]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -275,7 +278,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:LogMessage>
-                        <p:CvElementExistsWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: Text '0000ps, it looks like you have no Work tems!' (102,248,286,13)&quot;]" DesignTimeCacheId="143dd729-b774-4fda-997b-38235f84b68e" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="400,147" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_2" InformativeScreenshot="ebda820bbffd644e1df3da2e047d02c9" NumberOfScrolls="2" Result="[ErrorPageExists]" ScrollDirection="None" TimeoutMS="5000" Version="V5">
+                        <p:CvElementExistsWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: Text '0000ps, it looks like you have no Work tems!' (102,248,286,13)&quot;]" DesignTimeCacheId="143dd729-b774-4fda-997b-38235f84b68e" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_2" InformativeScreenshot="ebda820bbffd644e1df3da2e047d02c9" NumberOfScrolls="2" Result="[ErrorPageExists]" ScrollDirection="None" TimeoutMS="5000" Version="V5">
                           <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                             <uc:CvDescriptor Id="3ed1b542-d94b-416f-a9f0-1882a92050fa">
                               <uc:CvDescriptor.Target>
@@ -294,7 +297,7 @@
                           <If.Then>
                             <Sequence DisplayName="Extract Work items" sap:VirtualizedContainerService.HintSize="400,787" sap2010:WorkflowViewState.IdRef="Sequence_3">
                               <Sequence.Variables>
-                                <Variable x:TypeArguments="sd:DataTable" Name="dt_WorkItems" />
+                                <Variable x:TypeArguments="sd1:DataTable" Name="dt_WorkItems" />
                               </Sequence.Variables>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -311,7 +314,7 @@
                                   </uc:CvDescriptor>
                                 </p:CvExtractDataTableWithDescriptor.DesignTimeDescriptor>
                               </p:CvExtractDataTableWithDescriptor>
-                              <ui:AppendCsvFile sap2010:Annotation.AnnotationText="Save Items to process" DataTable="[dt_WorkItems]" Delimitator="Comma" DisplayName="Append WI5 Items To Process" FilePath="[in_FileToProcess]" sap:VirtualizedContainerService.HintSize="358,93" sap2010:WorkflowViewState.IdRef="AppendCsvFile_1">
+                              <ui:AppendCsvFile Encoding="{x:Null}" sap2010:Annotation.AnnotationText="Save Items to process" DataTable="[dt_WorkItems]" Delimitator="Comma" DisplayName="Append WI5 Items To Process" FilePath="[in_FileToProcess]" sap:VirtualizedContainerService.HintSize="358,93" sap2010:WorkflowViewState.IdRef="AppendCsvFile_1">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -366,8 +369,8 @@
                   <p:CVScope.DesignTimeCacheContainer>
                     <uc:CvCacheContainer>
                       <uc:CvCacheContainer.Caches>
-                        <scg:List x:TypeArguments="uc:CVCache" Capacity="3">
-                          <uc:CVCache DataSent="False" DisplayName="Error page" Id="143dd729-b774-4fda-997b-38235f84b68e" InformativeScreenshot="006eea09e2dec0458c7950b380489c7e" LogicalPosition="98, 166" OcrText="Home / Work tems&#xD;&#xA;| ‘Search Results |&#xD;&#xA;0000ps, it looks like you have no Work tems!&#xD;&#xA;This is not to say you can take the rest of the day off, but rather that you need to go to &quot;User Options”&#xD;&#xA;&gt; &quot;Reset Test Data&quot; to generate a random set of data.&#xD;&#xA;Actions wip Description Type status Date |&#xD;&#xA;SOME i2 03: idn iB oi6r (7: ig: 19 0 M d2 43 14 5&#xD;&#xA;Copyright © 2022 ACME Systems" Position="98, 166" ScreenshotGuid="607b519a-7451-4b63-914b-06cef6d1ebd3" ServerVersion="1">
+                        <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+                          <uc:CVCache DataSent="False" DisplayName="Error page" Id="143dd729-b774-4fda-997b-38235f84b68e" InformativeScreenshot="006eea09e2dec0458c7950b380489c7e" LogicalPosition="98, 166" OcrText="Home / Work tems&#xA;| ‘Search Results |&#xA;0000ps, it looks like you have no Work tems!&#xA;This is not to say you can take the rest of the day off, but rather that you need to go to &quot;User Options”&#xA;&gt; &quot;Reset Test Data&quot; to generate a random set of data.&#xA;Actions wip Description Type status Date |&#xA;SOME i2 03: idn iB oi6r (7: ig: 19 0 M d2 43 14 5&#xA;Copyright © 2022 ACME Systems" Position="98, 166" ScreenshotGuid="607b519a-7451-4b63-914b-06cef6d1ebd3" ServerVersion="1">
                             <uc:CVCache.CvAnchorRelations>
                               <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
                             </uc:CVCache.CvAnchorRelations>
@@ -525,7 +528,7 @@
                               </scg:List>
                             </uc:CVCache.OcrTexts>
                           </uc:CVCache>
-                          <uc:CVCache DataSent="False" DisplayName="Main Screen" Id="016b136a-e925-4c16-85de-650352c47d4f" InformativeScreenshot="4c94d2b2115cdde72fd92e54413f8862" LogicalPosition="207, 3" OcrText="oo ¢&#xD;&#xA;ASESEED I Om SEROEED  epen&#xD;&#xA;| seen Rare | |&#xD;&#xA;Plesse fo eo sort&#xD;&#xA;a, They ed 5 competi adersesod by eu agar,&#xD;&#xA;| Atons wap Description wee saws Dae |&#xD;&#xA;| =m sara Vert Account Pasion wt Open woton |&#xD;&#xA;| =m saorezts Gatuale Gent Securiy Hash wis Open won|&#xD;&#xA;| =m saorear Generate Veary Report for Vendor we Open wan |&#xD;&#xA;| IE saorize Research Cal Check Copy wiz Open 20190545 |&#xD;&#xA;| IE saorizr2 Research Cal Check Copy wiz Open 017.0822 |&#xD;&#xA;| IE saorza ‘Genate Veart Report for Vendor vas Open 017.0545 |&#xD;&#xA;| @® saorazen Research Cal Check Copy wiz Open wisoseo |&#xD;&#xA;| =m sare Vert Account Pasion wt Open woo |&#xD;&#xA;| =m sa7e2s9 Reseach Clint Check Copy we Open wanes |&#xD;&#xA;| =m@ sare Generate Veary Report for Vendor we Open wers |&#xD;&#xA;C02 a EE Tg 0M 12 1 de gs&#xD;&#xA;Copyh! ©2022 ACHE Systems" Position="207, 3" ScreenshotGuid="5c7afd8b-c96d-485b-8535-611cc2faeea6" ServerVersion="1">
+                          <uc:CVCache DataSent="False" DisplayName="Main Screen" Id="016b136a-e925-4c16-85de-650352c47d4f" InformativeScreenshot="4c94d2b2115cdde72fd92e54413f8862" LogicalPosition="207, 3" OcrText="oo ¢&#xA;ASESEED I Om SEROEED  epen&#xA;| seen Rare | |&#xA;Plesse fo eo sort&#xA;a, They ed 5 competi adersesod by eu agar,&#xA;| Atons wap Description wee saws Dae |&#xA;| =m sara Vert Account Pasion wt Open woton |&#xA;| =m saorezts Gatuale Gent Securiy Hash wis Open won|&#xA;| =m saorear Generate Veary Report for Vendor we Open wan |&#xA;| IE saorize Research Cal Check Copy wiz Open 20190545 |&#xA;| IE saorizr2 Research Cal Check Copy wiz Open 017.0822 |&#xA;| IE saorza ‘Genate Veart Report for Vendor vas Open 017.0545 |&#xA;| @® saorazen Research Cal Check Copy wiz Open wisoseo |&#xA;| =m sare Vert Account Pasion wt Open woo |&#xA;| =m sa7e2s9 Reseach Clint Check Copy we Open wanes |&#xA;| =m@ sare Generate Veary Report for Vendor we Open wers |&#xA;C02 a EE Tg 0M 12 1 de gs&#xA;Copyh! ©2022 ACHE Systems" Position="207, 3" ScreenshotGuid="5c7afd8b-c96d-485b-8535-611cc2faeea6" ServerVersion="1">
                             <uc:CVCache.CvAnchorRelations>
                               <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
                             </uc:CVCache.CvAnchorRelations>
@@ -890,11 +893,11 @@
                     </uc:CvCacheContainer>
                   </p:CVScope.DesignTimeCacheContainer>
                   <p:CVScope.OCREngine>
-                    <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                    <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
                       <ActivityFunc.Argument>
-                        <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+                        <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
                       </ActivityFunc.Argument>
-                      <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR 1" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,32" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" Scale="6" />
+                      <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR 1" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" Scale="6" />
                     </ActivityFunc>
                   </p:CVScope.OCREngine>
                   <p:CVScope.Target>
@@ -931,6 +934,6 @@
         </ui:BrowserScope>
       </Sequence>
     </DoWhile>
-    <ui:LogMessage DisplayName="finished extracting the data" sap:VirtualizedContainerService.HintSize="358,103" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Finished extracting the data&quot;]" />
+    <ui:LogMessage DisplayName="finished extracting the data" sap:VirtualizedContainerService.HintSize="522,79" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Finished extracting the data&quot;]" />
   </Sequence>
 </Activity>
